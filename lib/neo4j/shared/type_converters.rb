@@ -41,7 +41,7 @@ module Neo4j::Shared
         def to_ruby(value)
           return nil if value.nil?
           t = case value
-              when Fixnum
+              when Fixnum, Bignum
                 Time.at(value).utc
               when String
                 DateTime.strptime(value, '%Y-%m-%d %H:%M:%S %z')
