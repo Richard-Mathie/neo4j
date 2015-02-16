@@ -31,9 +31,9 @@ module Neo4j
           cfg.session_path = cfg.session_path.gsub("#{uri.user}:#{uri.password}@", '')
         end
 
-        if cfg.sessions.empty?
-          cfg.sessions << {type: cfg.session_type, path: cfg.session_path, options: cfg.session_options}
-        end
+        return if !cfg.sessions.empty?
+
+        cfg.sessions << {type: cfg.session_type, path: cfg.session_path, options: cfg.session_options}
       end
 
 
