@@ -2,7 +2,7 @@ require 'test_helper'
 
 require 'minitest/autorun'
 require 'minitest/spec'
-#require 'minitest-spec-rails'
+require 'minitest-spec-rails'
 
 require 'pry'
 
@@ -26,6 +26,11 @@ class TestFixtureObject#  < ActiveRecord::Base
   has_one :out, :test1, model_class: TestFixtureObject
   has_many :out, :test2, model_class: TestFixtureObject
   has_one :out, :test3
+end
+
+class ChildTestFixtureObject < TestFixtureObject
+  # as an example of inheritance
+  has_one :in, :parent, model_class: TestFixtureObject, type: :ancestor
 end
 
 describe FixtureSet do
@@ -78,7 +83,7 @@ end
 describe TestFixtureObject do
   include Neo4j::TestFixtures
   #binding.pry
-  fixtures :test_fixture_objects, :transitions
+  fixtures :test_fixture_objects
   
   it 'must load the fixtures' do
     #binding.pry

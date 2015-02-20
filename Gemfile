@@ -12,5 +12,6 @@ group 'test' do
   gem 'rspec', '~> 2.0'
   gem 'its'
   gem 'test-unit'
+  gem 'minitest-spec-rails'
   gem 'minitest'
 end

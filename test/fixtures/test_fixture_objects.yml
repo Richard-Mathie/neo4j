@@ -38,5 +38,7 @@ norf:
   name: '4'
   timestamp: <%= Time.now%>
   bool:      true
+  type: ChildTestFixtureObject
+  parent: bar
   previous:  qux
   sister:    qux
