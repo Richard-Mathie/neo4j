@@ -1,0 +1,42 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# 4553T-M0DL3-9000
+
+foo:
+  name: '0'
+  timestamp: <%= Time.now%>
+  bool: true
+  next:    bar   # <%=TestFixtureObject.find_by(test_id: FixtureSet.identify('bar')) %>
+  sister:  baz
+  friends: foo, bar, norf
+
+bar:
+  name:  '1'
+  timestamp: <%= Time.now%>
+  bool: false
+  next:     baz
+  previous: foo
+  sister:   norf
+
+baz:
+  name: '2'
+  timestamp: <%= Time.now%>
+  bool: true
+  next:     qux
+  previous: bar
+  sister:   foo
+  
+  
+qux:
+  name: '3'
+  timestamp: <%= Time.now%>
+  bool:     false
+  next:     norf
+  previous: baz
+  sister:   bar
+  
+norf:
+  name: '4'
+  timestamp: <%= Time.now%>
+  bool:      true
+  previous:  qux
+  sister:    qux

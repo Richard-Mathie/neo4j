@@ -24,6 +24,7 @@ require 'neo4j/shared/type_converters'
 require 'neo4j/shared/rel_type_converters'
 require 'neo4j/type_converters'
 require 'neo4j/paginated'
+require 'neo4j/neo4j_fixtures.rb'
 
 require 'neo4j/shared/callbacks'
 require 'neo4j/shared/property'
