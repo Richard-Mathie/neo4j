@@ -22,6 +22,14 @@ Rake::TestTask.new(:test_generators) do |test|
   test.verbose = true
 end
 
+# Adding test/lib directory to rake test.
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'test'
+  test.test_files = FileList['test/lib/*_test.rb']
+  test.verbose = true
+  desc "Test tests/lib/* code"
+end
+
 desc 'Generate coverage report'
 task 'coverage' do
   ENV['COVERAGE'] = 'true'

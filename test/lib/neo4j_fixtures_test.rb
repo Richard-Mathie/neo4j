@@ -1,11 +1,13 @@
 require 'test_helper'
 
-require 'minitest/spec'
 require 'minitest/autorun'
+require 'minitest/spec'
+#require 'minitest-spec-rails'
 
 require 'pry'
 
-require 'neo4j_fixtures.rb'
+require 'neo4j/neo4j_fixtures.rb'
+require 'neo4j'
 
 include Neo4j
 
